@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
@@ -64,8 +65,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HeroCard = ({ title, subTitle, btnText }) => {
+const HeroCard = ({ title, subTitle, btnText, btnTextLargeScreen }) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const largeScreen = useMediaQuery(theme.breakpoints.up('sm'));
   return (
     <Card>
       <CardContent className={classes.heroCardContent}>
@@ -92,7 +95,7 @@ const HeroCard = ({ title, subTitle, btnText }) => {
               size="large"
               fullWidth
             >
-              {btnText}
+              {largeScreen ? btnTextLargeScreen : btnText}
             </Button>
           </Grid>
         </Grid>
@@ -145,6 +148,7 @@ export default function Hero() {
                   title="我要找黃金單身漢"
                   subTitle="我們有上百位優秀男會員"
                   btnText="搜尋我的如意郎君"
+                  btnTextLargeScreen="搜尋"
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -152,6 +156,7 @@ export default function Hero() {
                   title="我要找優質美女"
                   subTitle="我們有上百位優秀女會員"
                   btnText="搜尋我的红粉佳人"
+                  btnTextLargeScreen="搜尋"
                 />
               </Grid>
             </Grid>
