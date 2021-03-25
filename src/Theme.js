@@ -1,10 +1,11 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
+const defaultTheme = createMuiTheme({});
+
 const theme = createMuiTheme({
   palette: {
     common: {
-      goldText: '#f9b934',
-      goldBorder: 'rgba(249, 185, 52, 0.5)',
+      lightGreyBg: 'rgb(235, 241, 242)',
       black: '#3c423d',
       selectedBg: 'rgba(0,0,0,0.08)',
       darkenBg: 'rgba(0,0,0,0.54)',
@@ -36,21 +37,35 @@ const theme = createMuiTheme({
     body1: {
       fontFamily: 'Hanyi',
     },
+    body2: {
+      fontFamily: 'Hanyi',
+    },
+    subtitle1: {
+      fontFamily: 'Hanyi',
+    },
     button: {
       fontFamily: 'Hanyi',
     },
     largeButton: {
       fontSize: '1.1rem',
     },
+    logoText: {
+      fontFamily: 'Lato',
+      fontWeight: 'bold',
+      color: 'rgba(217,39,31,255)',
+    },
   },
-  expandMoreIcon: {
-    width: '50px',
-    height: '50px',
-    borderRadius: '100%',
-    border: '2px solid #ffc107',
-    cursor: 'pointer',
-    background: 'transparent',
-    color: 'rgb(255, 193, 7)',
+  homePageSection: {
+    width: '100%',
+    margin: '0 auto',
+    padding: '48px 16px',
+    maxWidth: '1236px',
+    [defaultTheme.breakpoints.up('sm')]: {
+      padding: '64px 64px',
+    },
+    [defaultTheme.breakpoints.up('md')]: {
+      padding: '96px 64px',
+    },
   },
 });
 

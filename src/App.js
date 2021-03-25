@@ -1,7 +1,10 @@
 import { useEffect, useContext } from 'react';
 import { useLocation, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Hero from './components/Hero';
+import AboutUsBottom from './components/HomePageComponents/AboutUsBottom';
+import AboutUsTop from './components/HomePageComponents/AboutUsTop';
+import Hero from './components/HomePageComponents/Hero';
+import Plans from './components/HomePageComponents/Plans';
 
 import { urlIndexMapping, navStateContext } from './contexts/navState';
 
@@ -23,6 +26,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Hero />
+          <AboutUsTop />
+          <AboutUsBottom />
+          <Plans />
         </Route>
       </Switch>
     </div>

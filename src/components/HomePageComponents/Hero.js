@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 
-import heroBg from '../assets/heroBg.jpg';
+import heroBg from '../../assets/heroBg.jpg';
 
 const useStyles = makeStyles((theme) => ({
   heroBgImg: {
@@ -28,28 +28,17 @@ const useStyles = makeStyles((theme) => ({
     left: '50%',
     transform: 'translate(-50%, -50%)',
   },
+  logoText: {
+    ...theme.typography.logoText,
+  },
   sectionPadding: {
-    width: '100%',
-    margin: '0 auto',
-    padding: '48px 16px',
-    maxWidth: '1236px',
-    [theme.breakpoints.up('sm')]: {
-      padding: '64px 64px',
-    },
-    [theme.breakpoints.up('md')]: {
-      padding: '96px 64px',
-    },
+    ...theme.homePageSection,
   },
   fontWhite: {
     color: 'white',
   },
-  logoText: {
-    fontFamily: 'Lato',
-    fontWeight: 'bold',
-    color: 'rgba(217,39,31,255)',
-  },
   heroHook: {
-    backgroundColor: 'rgb(247, 249, 250);',
+    backgroundColor: theme.palette.common.lightGreyBg,
   },
   heroHookTitleBlock: {
     marginBottom: '24px',
@@ -65,7 +54,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HeroCard = ({ title, subTitle, btnText, btnTextLargeScreen }) => {
+const HeroCard = ({
+  title,
+  subTitle,
+  btnText,
+  btnTextLargeScreen,
+  btnColor,
+}) => {
   const classes = useStyles();
   const theme = useTheme();
   const largeScreen = useMediaQuery(theme.breakpoints.up('sm'));
@@ -89,12 +84,7 @@ const HeroCard = ({ title, subTitle, btnText, btnTextLargeScreen }) => {
             justify="flex-end"
             alignItems="center"
           >
-            <Button
-              variant="contained"
-              color="secondary"
-              size="large"
-              fullWidth
-            >
+            <Button variant="contained" color={btnColor} size="large" fullWidth>
               {largeScreen ? btnTextLargeScreen : btnText}
             </Button>
           </Grid>
@@ -149,6 +139,7 @@ export default function Hero() {
                   subTitle="我們有上百位優秀男會員"
                   btnText="搜尋我的如意郎君"
                   btnTextLargeScreen="搜尋"
+                  btnColor="primary"
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -157,6 +148,7 @@ export default function Hero() {
                   subTitle="我們有上百位優秀女會員"
                   btnText="搜尋我的红粉佳人"
                   btnTextLargeScreen="搜尋"
+                  btnColor="secondary"
                 />
               </Grid>
             </Grid>
