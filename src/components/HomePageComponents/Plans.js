@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
+  Button,
   Card,
   CardContent,
   CardMedia,
@@ -123,6 +124,11 @@ export default function Plans() {
               title="富豪徵婚"
               content="(年收300萬以上)或(資產達3000萬以上)或(上市櫃公司家族或富二代等級)"
             />
+            <Grid container item xs={12} justify="center">
+              <Button variant="outlined" color="primary">
+                查看全部
+              </Button>
+            </Grid>
           </Grid>
         </div>
       </div>
