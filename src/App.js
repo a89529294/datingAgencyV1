@@ -6,6 +6,7 @@ import AboutUsTop from './components/HomePageComponents/AboutUsTop';
 import Events from './components/HomePageComponents/Events';
 import Hero from './components/HomePageComponents/Hero';
 import Plans from './components/HomePageComponents/Plans';
+import News from './components/HomePageComponents/News';
 
 import { urlIndexMapping, navStateContext } from './contexts/navState';
 
@@ -31,6 +32,7 @@ function App() {
           <AboutUsBottom />
           <Plans />
           <Events />
+          <News />
         </Route>
       </Switch>
     </div>
