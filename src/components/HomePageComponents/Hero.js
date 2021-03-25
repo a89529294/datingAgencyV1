@@ -41,10 +41,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.common.lightGreyBg,
   },
   heroHookTitleBlock: {
-    marginBottom: '24px',
-    [theme.breakpoints.up('md')]: {
-      marginBottom: '32px',
-    },
+    ...theme.homePageSectionTitleMarginBottom,
   },
   heroCardContent: {
     padding: '32px 16px',

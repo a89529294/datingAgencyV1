@@ -1,23 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Grid,
-  IconButton,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@material-ui/core';
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
+import { Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import parse from 'html-react-parser';
+import LinkButton from '../LinkButton';
 
 const useStyles = makeStyles((theme) => ({
   section: {
     ...theme.homePageSection,
-  },
-  link: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    textDecoration: 'none',
   },
 }));
 
@@ -41,14 +30,7 @@ const Section = ({ title, bodyText }) => {
         <Grid item xs={12}>
           <Grid container alignItems="center" wrap="nowrap">
             <div>
-              <a className={classes.link}>
-                <Typography variant="subtitle1" color="primary">
-                  了解更多
-                </Typography>
-                <IconButton color="primary">
-                  <ArrowRightAltIcon color="primary" />
-                </IconButton>
-              </a>
+              <LinkButton label="了解更多" />
             </div>
           </Grid>
         </Grid>

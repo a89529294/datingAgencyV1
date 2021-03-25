@@ -3,6 +3,7 @@ import { useLocation, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import AboutUsBottom from './components/HomePageComponents/AboutUsBottom';
 import AboutUsTop from './components/HomePageComponents/AboutUsTop';
+import Events from './components/HomePageComponents/Events';
 import Hero from './components/HomePageComponents/Hero';
 import Plans from './components/HomePageComponents/Plans';
 
@@ -29,6 +30,7 @@ function App() {
           <AboutUsTop />
           <AboutUsBottom />
           <Plans />
+          <Events />
         </Route>
       </Switch>
     </div>

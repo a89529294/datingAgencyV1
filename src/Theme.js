@@ -67,6 +67,12 @@ const theme = createMuiTheme({
       padding: '96px 64px',
     },
   },
+  homePageSectionTitleMarginBottom: {
+    marginBottom: '24px',
+    [defaultTheme.breakpoints.up('md')]: {
+      marginBottom: '32px',
+    },
+  },
 });
 
 export default responsiveFontSizes(theme);

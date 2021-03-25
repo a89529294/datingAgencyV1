@@ -27,10 +27,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.homePageSection,
   },
   sectionTop: {
-    marginBottom: '24px',
-    [theme.breakpoints.up('md')]: {
-      marginBottom: '32px',
-    },
+    ...theme.homePageSectionTitleMarginBottom,
   },
   logoText: {
     ...theme.typography.logoText,
