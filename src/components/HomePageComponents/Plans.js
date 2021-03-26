@@ -12,6 +12,7 @@ import {
 } from '@material-ui/core';
 import parse from 'html-react-parser';
 import LazyLoad from 'react-lazyload';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import plan1Img from '../../assets/plan1.jpg';
 import plan2Img from '../../assets/plan2.jpg';
@@ -52,23 +53,25 @@ const Plan = ({ imgSrc, title, content }) => {
   const classes = useStyles();
   return (
     <Grid item xs={12} sm={6} md={4}>
-      <LazyLoad once offset={100} height={300}>
-        <Card className={classes.card}>
-          <CardMedia
-            className={classes.cardImg}
-            image={imgSrc}
-            title="plan 1 image"
-          ></CardMedia>
-          <CardContent>
-            <Typography gutterBottom variant="h5" color="textPrimary">
-              {title}
-            </Typography>
-            <Typography variant="body1" color="textSecondary">
-              {parse(content)}
-            </Typography>
-          </CardContent>
-        </Card>
-      </LazyLoad>
+      <ScrollAnimation animateIn="animate__fadeIn" animateOnce>
+        <LazyLoad once offset={100} height={300}>
+          <Card className={classes.card}>
+            <CardMedia
+              className={classes.cardImg}
+              image={imgSrc}
+              title="plan 1 image"
+            ></CardMedia>
+            <CardContent>
+              <Typography gutterBottom variant="h5" color="textPrimary">
+                {title}
+              </Typography>
+              <Typography variant="body1" color="textSecondary">
+                {parse(content)}
+              </Typography>
+            </CardContent>
+          </Card>
+        </LazyLoad>
+      </ScrollAnimation>
     </Grid>
   );
 };
@@ -81,20 +84,23 @@ export default function Plans() {
     <div className={classes.root}>
       <div className={classes.section}>
         <div>
-          <Grid container spacing={2} className={classes.sectionTop}>
-            <Grid item xs={12}>
-              <Typography variant="h4" color="textPrimary" align="center">
-                優惠專案
-              </Typography>
+          <ScrollAnimation animateIn="animate__slideInUp" animateOnce>
+            <Grid container spacing={2} className={classes.sectionTop}>
+              <Grid item xs={12}>
+                <Typography variant="h4" color="textPrimary" align="center">
+                  優惠專案
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant="h6" color="textSecondary" align="center">
+                  不管你是哪個族群的人，趕緊來看看
+                  <span className={classes.logoText}>17Marry</span>
+                  為您量身定做的方案吧！
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6" color="textSecondary" align="center">
-                不管你是哪個族群的人，趕緊來看看
-                <span className={classes.logoText}>17Marry</span>
-                為您量身定做的方案吧！
-              </Typography>
-            </Grid>
-          </Grid>
+          </ScrollAnimation>
+
           <Grid container spacing={mdUp ? 4 : 2}>
             <Plan
               imgSrc={plan1Img}

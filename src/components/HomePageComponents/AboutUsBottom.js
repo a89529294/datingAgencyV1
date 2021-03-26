@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import parse from 'html-react-parser';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 import LinkButton from '../LinkButton';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,29 +15,31 @@ const useStyles = makeStyles((theme) => ({
 const Section = ({ title, bodyText }) => {
   const classes = useStyles();
   return (
-    <Grid item xs={12} md={4}>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Typography
-            variant="h6"
-            color="textPrimary"
-            style={{ fontWeight: 600 }}
-          >
-            {title}
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography color="textPrimary">{parse(bodyText)}</Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container alignItems="center" wrap="nowrap">
-            <div>
-              <LinkButton label="了解更多" />
-            </div>
+    <ScrollAnimation animateIn="animate__slideInLeft" animateOnce>
+      <Grid item xs={12} md={4}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Typography
+              variant="h6"
+              color="textPrimary"
+              style={{ fontWeight: 600 }}
+            >
+              {title}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography color="textPrimary">{parse(bodyText)}</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Grid container alignItems="center" wrap="nowrap">
+              <div>
+                <LinkButton label="了解更多" />
+              </div>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </ScrollAnimation>
   );
 };
 
@@ -57,9 +61,7 @@ export default function AboutUsBottom() {
           />
           <Section
             title="服務據點"
-            bodyText="聯絡電話 02-23673367 <br/>
-服務時間 下午1點半至晚上9點半 <br/>
-地址：台北市大安區羅斯福路三段191號3樓"
+            bodyText="聯絡電話 02-23673367 <br/> 服務時間 下午1點半至晚上9點半 <br/> 地址：台北市大安區羅斯福路三段191號3樓"
           />
         </Grid>
       </div>

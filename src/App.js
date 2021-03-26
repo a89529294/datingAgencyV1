@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useRef } from 'react';
 import { useLocation, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import AboutUsBottom from './components/HomePageComponents/AboutUsBottom';
@@ -16,6 +16,7 @@ function App() {
   const location = useLocation();
   const { navState } = useContext(navStateContext);
   const { setTabIndex, setSubMenuIndex } = navState;
+  const headerRef = useRef();
   useEffect(() => {
     const pathname = location.pathname;
     if (urlIndexMapping[pathname]) {
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header ref={headerRef} />
       <Switch>
         <Route exact path="/">
           <Hero />
@@ -38,7 +39,7 @@ function App() {
           <ContactUs />
         </Route>
       </Switch>
-      <Footer />
+      <Footer headerElement={headerRef.current} />
     </div>
   );
 }

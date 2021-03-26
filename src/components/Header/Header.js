@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, forwardRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header() {
+const Header = forwardRef((props, ref) => {
   const classes = useStyles();
 
   const { navState } = useContext(navStateContext);
@@ -61,7 +61,7 @@ export default function Header() {
         position="static"
         className={classes.appbar}
         elevation={0}
-        id="myHeader"
+        ref={ref}
       >
         <Toolbar className={classes.toolbar}>
           <div className={classes.logoContainer}>
@@ -87,4 +87,6 @@ export default function Header() {
       <Divider />
     </>
   );
-}
+});
+
+export default Header;

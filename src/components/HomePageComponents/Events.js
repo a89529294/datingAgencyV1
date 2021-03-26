@@ -8,6 +8,8 @@ import {
   Card,
   CardContent,
 } from '@material-ui/core';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 import LinkButton from '../LinkButton';
 
 const eventArray = [
@@ -91,7 +93,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const EventCard = ({ tagColor, tagLabel, eventName, location, date }) => {
+const EventCard = ({
+  tagColor,
+  tagLabel,
+  eventName,
+  location,
+  date,
+  index,
+}) => {
   const classes = useStyles();
   return (
     <Grid
@@ -103,48 +112,54 @@ const EventCard = ({ tagColor, tagLabel, eventName, location, date }) => {
       alignItems="center"
       direction="column"
     >
-      <Card variant="outlined" className={classes.eventCard}>
-        <CardContent className={classes.cardContent}>
-          <Grid container spacing={2}>
-            <Grid item container xs={12} alignItems="center">
-              <span
-                className={classes.tag}
-                style={{
-                  background: tagColor,
-                  borderColor: tagColor,
-                }}
-              >
-                <Typography variant="body2" style={{ color: 'white' }}>
-                  {tagLabel}
+      <ScrollAnimation
+        animateIn={index % 2 ? 'animate__slideInRight' : 'animate__slideInLeft'}
+        animateOnce
+        style={{ width: '100%' }}
+      >
+        <Card variant="outlined" className={classes.eventCard}>
+          <CardContent className={classes.cardContent}>
+            <Grid container spacing={2}>
+              <Grid item container xs={12} alignItems="center">
+                <span
+                  className={classes.tag}
+                  style={{
+                    background: tagColor,
+                    borderColor: tagColor,
+                  }}
+                >
+                  <Typography variant="body2" style={{ color: 'white' }}>
+                    {tagLabel}
+                  </Typography>
+                </span>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant="h6">{eventName}</Typography>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2}>
+              <Grid item container xs={12} alignItems="center">
+                <Typography
+                  variant="subtitle1"
+                  color="textSecondary"
+                  component="span"
+                >
+                  {location}
                 </Typography>
-              </span>
+                <span className={classes.dot} />
+                <Typography
+                  variant="subtitle1"
+                  color="textSecondary"
+                  component="span"
+                  style={{ fontFamily: 'Lato' }}
+                >
+                  {date}
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6">{eventName}</Typography>
-            </Grid>
-          </Grid>
-          <Grid container spacing={2}>
-            <Grid item container xs={12} alignItems="center">
-              <Typography
-                variant="subtitle1"
-                color="textSecondary"
-                component="span"
-              >
-                {location}
-              </Typography>
-              <span className={classes.dot} />
-              <Typography
-                variant="subtitle1"
-                color="textSecondary"
-                component="span"
-                style={{ fontFamily: 'Lato' }}
-              >
-                {date}
-              </Typography>
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </ScrollAnimation>
     </Grid>
   );
 };
@@ -157,17 +172,20 @@ export default function Events() {
     <div className={classes.section}>
       <div>
         <Grid container spacing={2} className={classes.titleMarginBottom}>
-          <Grid item xs={12}>
-            <Typography variant="h4" color="textPrimary">
-              近期活動
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h6" color="textSecondary">
-              全省各地平價優質有趣台北桃園新竹台中嘉義台南高雄屏東宜蘭彰化苗栗單身聯誼活動
-            </Typography>
-            <LinkButton label="查看所有活動" />
-          </Grid>
+          <ScrollAnimation animateIn="animate__slideInUp" animateOnce>
+            <Grid item xs={12}>
+              <Typography variant="h4" color="textPrimary">
+                近期活動
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant="h6" color="textSecondary">
+                全省各地平價優質有趣台北桃園新竹台中嘉義台南高雄屏東宜蘭彰化苗栗單身聯誼活動
+              </Typography>
+              <LinkButton label="查看所有活動" />
+            </Grid>
+          </ScrollAnimation>
+
           <Grid container spacing={mdUp ? 4 : 2}>
             {eventArray.map((event, i) => (
               <EventCard
@@ -177,6 +195,7 @@ export default function Events() {
                 location={event.location}
                 date={event.date}
                 key={i}
+                index={i}
               />
             ))}
           </Grid>

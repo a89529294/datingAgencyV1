@@ -7,6 +7,7 @@ import {
   Grid,
   Typography,
 } from '@material-ui/core';
+import ScrollAnimation from 'react-animate-on-scroll';
 import SwiperCore, { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 SwiperCore.use([Pagination]);
@@ -87,7 +88,7 @@ export default function News() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <div>
+      <ScrollAnimation animateIn="animate__fadeIn" animateOnce>
         <Grid container spacing={2} className={classes.sectionTitle}>
           <Grid item xs={12}>
             <Typography variant="overline" color="primary">
@@ -117,7 +118,7 @@ export default function News() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </ScrollAnimation>
     </div>
   );
 }

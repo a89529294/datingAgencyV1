@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 
 import './index.css';
+import 'animate.css/animate.min.css';
 import App from './App';
 import { NavStateProvider } from './contexts/navState';
 import theme from './Theme';

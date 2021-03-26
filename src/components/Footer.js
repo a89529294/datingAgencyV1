@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Footer() {
+export default function Footer({ headerElement }) {
   const classes = useStyles();
   const context = useContext(navStateContext);
   const { navState } = context;
@@ -50,7 +50,12 @@ export default function Footer() {
             </Grid>
           </Hidden>
           <Hidden smUp>
-            <Link href="#myHeader" color="primary">
+            <Link
+              onClick={() =>
+                headerElement.scrollIntoView({ behavior: 'smooth' })
+              }
+              color="primary"
+            >
               回最上面
             </Link>
           </Hidden>
