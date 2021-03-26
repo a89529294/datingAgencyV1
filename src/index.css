@@ -14,3 +14,7 @@
   src: local('Lato'), url(./fonts/Lato-Light.ttf) format('truetype');
   font-weight: lighter;
 }
+
+html {
+  width: 100vw;
+}

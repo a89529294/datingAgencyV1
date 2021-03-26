@@ -5,7 +5,7 @@ const defaultTheme = createMuiTheme({});
 const theme = createMuiTheme({
   palette: {
     common: {
-      lightGreyBg: 'rgb(235, 241, 242)',
+      lightLogoRedBg: '#F9EBE3',
       black: '#3c423d',
       selectedBg: 'rgba(0,0,0,0.08)',
       darkenBg: 'rgba(0,0,0,0.54)',
@@ -41,6 +41,9 @@ const theme = createMuiTheme({
       fontFamily: 'Hanyi',
     },
     subtitle1: {
+      fontFamily: 'Hanyi',
+    },
+    subtitle2: {
       fontFamily: 'Hanyi',
     },
     button: {

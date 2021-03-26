@@ -57,7 +57,12 @@ export default function Header() {
 
   return (
     <>
-      <AppBar position="static" className={classes.appbar} elevation={0}>
+      <AppBar
+        position="static"
+        className={classes.appbar}
+        elevation={0}
+        id="myHeader"
+      >
         <Toolbar className={classes.toolbar}>
           <div className={classes.logoContainer}>
             <Link to="/" className={classes.homePageLink}>

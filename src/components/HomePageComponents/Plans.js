@@ -21,7 +21,7 @@ import plan5Img from '../../assets/plan5.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.common.lightGreyBg,
+    backgroundColor: theme.palette.common.lightLogoRedBg,
   },
   section: {
     ...theme.homePageSection,

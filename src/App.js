@@ -9,6 +9,8 @@ import Plans from './components/HomePageComponents/Plans';
 import News from './components/HomePageComponents/News';
 
 import { urlIndexMapping, navStateContext } from './contexts/navState';
+import ContactUs from './components/HomePageComponents/ContactUs';
+import Footer from './components/Footer';
 
 function App() {
   const location = useLocation();
@@ -33,8 +35,10 @@ function App() {
           <Plans />
           <Events />
           <News />
+          <ContactUs />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

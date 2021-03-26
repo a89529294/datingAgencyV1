@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
   },
   heroHook: {
-    backgroundColor: theme.palette.common.lightGreyBg,
+    backgroundColor: theme.palette.common.lightLogoRedBg,
   },
   heroHookTitleBlock: {
     ...theme.homePageSectionTitleMarginBottom,

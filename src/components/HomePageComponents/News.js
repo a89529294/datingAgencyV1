@@ -30,7 +30,7 @@ const newsArray = [
     body: '女孩，除非你是情場老手及不在乎受騙，最好別輕易嚐試在APP交友',
   },
   {
-    imgSrc: news1Img,
+    imgSrc: news3Img,
     title: '主編3',
     body: '找尋對象，是參加聯誼，還是參加一對一相親約會好呢？',
   },
@@ -44,7 +44,7 @@ const newsArray = [
 const useStyles = makeStyles((theme) => ({
   root: {
     ...theme.homePageSection,
-    backgroundColor: theme.palette.common.lightGreyBg,
+    backgroundColor: theme.palette.common.lightLogoRedBg,
   },
   sectionTitle: {
     ...theme.homePageSectionTitleMarginBottom,
@@ -107,8 +107,8 @@ export default function News() {
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
-          {newsArray.map((news) => (
-            <SwiperSlide style={{ width: 'auto' }}>
+          {newsArray.map((news, i) => (
+            <SwiperSlide style={{ width: 'auto' }} key={i}>
               <SwiperCard
                 imgSrc={news.imgSrc}
                 title={news.title}
