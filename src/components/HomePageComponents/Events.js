@@ -100,6 +100,7 @@ const EventCard = ({
   location,
   date,
   index,
+  mdUp,
 }) => {
   const classes = useStyles();
   return (
@@ -113,7 +114,13 @@ const EventCard = ({
       direction="column"
     >
       <ScrollAnimation
-        animateIn={index % 2 ? 'animate__slideInRight' : 'animate__slideInLeft'}
+        animateIn={
+          mdUp
+            ? 'animate__slideInUp'
+            : index % 2
+            ? 'animate__slideInRight'
+            : 'animate__slideInLeft'
+        }
         animateOnce
         style={{ width: '100%' }}
       >
@@ -196,6 +203,7 @@ export default function Events() {
                 date={event.date}
                 key={i}
                 index={i}
+                mdUp={mdUp}
               />
             ))}
           </Grid>
