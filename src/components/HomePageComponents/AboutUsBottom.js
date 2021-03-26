@@ -1,6 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { Grid, Typography } from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import parse from 'html-react-parser';
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -12,11 +13,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Section = ({ title, bodyText }) => {
+const Section = ({ title, bodyText, mdUp }) => {
   const classes = useStyles();
+
   return (
-    <ScrollAnimation animateIn="animate__slideInLeft" animateOnce>
-      <Grid item xs={12} md={4}>
+    <Grid item xs={12} md={4}>
+      <ScrollAnimation
+        animateIn={mdUp ? 'animate__slideInUp' : 'animate__slideInLeft'}
+        animateOnce
+      >
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Typography
@@ -38,8 +43,8 @@ const Section = ({ title, bodyText }) => {
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </ScrollAnimation>
+      </ScrollAnimation>
+    </Grid>
   );
 };
 
@@ -54,14 +59,17 @@ export default function AboutUsBottom() {
           <Section
             title="宗旨"
             bodyText="篩選過的會員皆有正當的工作、穩定的經濟來源，歷練後個性也較成熟穩重且動機明確，是真心想找對象共組幸福家庭白頭偕老。"
+            mdUp={mdUp}
           />
           <Section
             title="聯絡我們"
             bodyText="服務時間為下午1點半至晚上9點半。請將您的寶貴意見以填寫表單方式送出我們將於工作日由專人以郵件回覆您的問題. 數位客服. 提供更加值且即時的服務"
+            mdUp={mdUp}
           />
           <Section
             title="服務據點"
             bodyText="聯絡電話 02-23673367 <br/> 服務時間 下午1點半至晚上9點半 <br/> 地址：台北市大安區羅斯福路三段191號3樓"
+            mdUp={mdUp}
           />
         </Grid>
       </div>

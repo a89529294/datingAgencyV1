@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
       ),url(${heroBg})`,
-    backgroundPosition: 'center',
+    backgroundPosition: 'top',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
   },

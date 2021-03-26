@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Hidden, Link, Typography } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
+
+import { navStateContext } from '../contexts/navState';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
-
-import { navStateContext } from '../contexts/navState';
 import logo from '../assets/logo.svg';
 
 const useStyles = makeStyles((theme) => ({
@@ -18,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
   },
   iconContainer: {
     marginLeft: '1rem',
+  },
+  resetLinkStyle: {
+    textDecoration: 'none',
+    textTransform: 'none',
+    color: 'inherit',
   },
 }));
 
@@ -36,14 +42,21 @@ export default function Footer({ headerElement }) {
           alignItems="center"
         >
           <Grid item xs={3}>
-            <img src={logo} alt="logo" className={classes.logo} />
+            <RouterLink to="/">
+              <img src={logo} alt="logo" className={classes.logo} />
+            </RouterLink>
           </Grid>
           <Hidden xsDown>
             <Grid item sm={9} md={6} container spacing={2}>
               {navState.routes.map((route, i) => (
                 <Grid item xs={4} key={i}>
                   <Typography variant="h6" align="right">
-                    {route.label}
+                    <RouterLink
+                      to={route.to}
+                      className={classes.resetLinkStyle}
+                    >
+                      {route.label}
+                    </RouterLink>
                   </Typography>
                 </Grid>
               ))}

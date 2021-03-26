@@ -38,6 +38,7 @@ const routes = [
   {
     label: '登入',
     subMenu: signupSigninMenuOptions,
+    to: '/signin',
   },
 ];
 
