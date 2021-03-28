@@ -10,14 +10,14 @@ import {
 import ScrollAnimation from 'react-animate-on-scroll';
 import SwiperCore, { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-SwiperCore.use([Pagination]);
-
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 
 import news1Img from '../../assets/news1.jpeg';
 import news2Img from '../../assets/news2.jpeg';
 import news3Img from '../../assets/news3.jpeg';
+
+SwiperCore.use([Pagination]);
 
 const newsArray = [
   {
