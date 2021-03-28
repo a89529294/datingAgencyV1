@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Button from '@material-ui/core/Button';
 
-import { navStateContext } from '../../contexts/navState';
+import { navStateContext } from '../../../contexts/navState';
 
 const useStyles = makeStyles((theme) => ({
   root: {

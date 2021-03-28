@@ -9,9 +9,9 @@ import Hidden from '@material-ui/core/Hidden';
 import { Link } from 'react-router-dom';
 
 import MyDrawer from './MyDrawer';
-import { navStateContext } from '../../contexts/navState';
+import { navStateContext } from '../../../contexts/navState';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../../assets/logo.svg';
 import MyTabs from './MyTabs';
 
 const useStyles = makeStyles((theme) => ({

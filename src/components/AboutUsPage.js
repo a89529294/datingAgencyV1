@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Avatar,
@@ -6,11 +7,15 @@ import {
   CardContent,
   Divider,
   Grid,
+  GridList,
+  GridListTile,
   List,
   ListItem,
   ListItemAvatar,
   ListItemText,
   Typography,
+  useTheme,
+  useMediaQuery,
 } from '@material-ui/core';
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
@@ -26,6 +31,10 @@ import m4Img from '../assets/teamMembers/m4.jpeg';
 import m5Img from '../assets/teamMembers/m5.jpeg';
 import m6Img from '../assets/teamMembers/m6.jpeg';
 import mapImg from '../assets/map.jpeg';
+import g1Img from '../assets/aboutUsGallery/gallery1.jpg';
+import g2Img from '../assets/aboutUsGallery/gallery2.jpg';
+import g3Img from '../assets/aboutUsGallery/gallery3.jpg';
+import g4Img from '../assets/aboutUsGallery/gallery4.jpg';
 
 const useStyles = makeStyles((theme) => ({
   heroContainer: {
@@ -164,6 +173,15 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
     objectFit: 'cover',
+  },
+  galleryContainer: {
+    backgroundColor: theme.palette.common.lightGrey,
+  },
+  galleryImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    borderRadius: 8,
   },
 }));
 
@@ -377,10 +395,69 @@ const ContactUs = () => {
           <div className={classes.contactUsMap}>
             <div className={classes.contactUsMapOverFlowHidden}>
               <div className={classes.contactUsMapContainer}>
-                <img src={mapImg} className={classes.contactUsMapImg} />
+                <LazyLoad height={300} once offset={100}>
+                  <img src={mapImg} className={classes.contactUsMapImg} />
+                </LazyLoad>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Gallery = () => {
+  const classes = useStyles();
+  const theme = useTheme();
+  const mdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const tileData = [
+    {
+      img: g1Img,
+      title: 'gallery 1 image',
+      cols: mdUp ? 1 : 4,
+    },
+    {
+      img: g2Img,
+      title: 'gallery 2 image',
+      cols: mdUp ? 3 : 4,
+    },
+    {
+      img: g3Img,
+      title: 'gallery 3 image',
+      cols: mdUp ? 3 : 4,
+    },
+    {
+      img: g4Img,
+      title: 'gallery 4 image',
+      cols: mdUp ? 1 : 4,
+    },
+  ];
+  return (
+    <div className={classes.galleryContainer}>
+      <div className={classes.section}>
+        <div>
+          <SectionTitle
+            title="公司據點展示"
+            body="我們期許自我及經銷夥伴提供最優質、專業的服務"
+          />
+          <GridList
+            cols={4}
+            spacing={mdUp ? 24 : 8}
+            cellHeight={mdUp ? 384 : 268}
+          >
+            {tileData.map((tile) => (
+              <GridListTile key={tile.img} cols={tile.cols}>
+                <LazyLoad height={300} once offset={100}>
+                  <img
+                    src={tile.img}
+                    alt={tile.title}
+                    className={classes.galleryImage}
+                  />
+                </LazyLoad>
+              </GridListTile>
+            ))}
+          </GridList>
         </div>
       </div>
     </div>
@@ -397,6 +474,7 @@ export default function AboutUsPage() {
       <Divider />
       <ContactUs />
       <Divider />
+      <Gallery />
     </div>
   );
 }

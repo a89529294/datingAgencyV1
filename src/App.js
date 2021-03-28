@@ -1,7 +1,7 @@
 import { useEffect, useContext, useRef } from 'react';
 import { useLocation, Switch, Route } from 'react-router-dom';
 
-import Header from './components/Header/Header';
+import Header from './components/partials/Header/Header';
 import { urlIndexMapping, navStateContext } from './contexts/navState';
 import Footer from './components/partials/Footer';
 import AboutUsPage from './components/AboutUsPage';

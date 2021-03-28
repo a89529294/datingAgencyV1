@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
-import { navStateContext } from '../../contexts/navState';
+import { navStateContext } from '../../../contexts/navState';
 
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
