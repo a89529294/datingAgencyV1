@@ -35,6 +35,7 @@ import g1Img from '../assets/aboutUsGallery/gallery1.jpg';
 import g2Img from '../assets/aboutUsGallery/gallery2.jpg';
 import g3Img from '../assets/aboutUsGallery/gallery3.jpg';
 import g4Img from '../assets/aboutUsGallery/gallery4.jpg';
+import ImageCenterText from './partials/ImageCenterText';
 
 const useStyles = makeStyles((theme) => ({
   heroContainer: {
@@ -190,7 +191,11 @@ const HeroSection = () => {
   return (
     <div className={classes.heroContainer}>
       <img src={heroBg} className={classes.heroBg} />
-      <div className={classes.heroText}>
+      <ImageCenterText
+        title="關於我們"
+        body="也因為大家都有穩定的事業，經濟無虞才能照自己的理念來經營，設定會員入會門檻，從外貌、經濟、人品開始把關，好好為客戶們找尋、篩選需求的對象，進而放心的交往。"
+      />
+      {/* <div className={classes.heroText}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Typography variant="h3" style={{ color: 'white' }}>
@@ -203,7 +208,7 @@ const HeroSection = () => {
             </Typography>
           </Grid>
         </Grid>
-      </div>
+      </div> */}
     </div>
   );
 };

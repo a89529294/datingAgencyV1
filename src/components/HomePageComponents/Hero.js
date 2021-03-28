@@ -10,6 +10,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 import heroBg from '../../assets/heroBg.jpg';
 import SectionTitle from '../partials/SectionTitle';
+import ImageCenterText from '../partials/ImageCenterText';
 
 const useStyles = makeStyles((theme) => ({
   heroBgImg: {
@@ -24,21 +25,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
   },
-  heroText: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-  },
-  logoText: {
-    ...theme.typography.logoText,
-  },
+
   sectionPadding: {
     ...theme.homePageSection,
   },
-  fontWhite: {
-    color: 'white',
-  },
+
   heroHook: {
     backgroundColor: theme.palette.common.lightLogoRedBg,
   },
@@ -95,25 +86,11 @@ export default function Hero() {
   return (
     <div>
       <div className={classes.heroBgImg}>
-        <div className={`${classes.heroText} ${classes.sectionPadding}`}>
-          <ScrollAnimation animateIn="animate__slideInUp" animateOnce>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <Typography variant="h3" className={classes.fontWhite}>
-                  歡迎來到
-                  <span className={classes.logoText}>
-                    <span style={{ fontSize: '1rem' }}>17</span>Marry
-                  </span>
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="h6" className={classes.fontWhite}>
-                  讓我們幫你找到你的夢中情人
-                </Typography>
-              </Grid>
-            </Grid>
-          </ScrollAnimation>
-        </div>
+        <ImageCenterText
+          title="歡迎來到"
+          body="讓我們幫你找到你的夢中情人"
+          showLogo={true}
+        />
       </div>
       <div className={classes.heroHook}>
         <div className={classes.sectionPadding}>
