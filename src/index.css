@@ -15,12 +15,11 @@
   font-weight: lighter;
 }
 
-/* html {
-  width: 100vw;
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
-body,
-#root,
-.app {
-  width: 100%;
-} */

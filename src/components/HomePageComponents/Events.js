@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import LinkButton from '../LinkButton';
+import LinkButton from '../partials/LinkButton';
 
 const eventArray = [
   {

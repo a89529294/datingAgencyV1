@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import heroBg from '../../assets/heroBg.jpg';
+import SectionTitle from '../partials/SectionTitle';
 
 const useStyles = makeStyles((theme) => ({
   heroBgImg: {
@@ -40,9 +41,6 @@ const useStyles = makeStyles((theme) => ({
   },
   heroHook: {
     backgroundColor: theme.palette.common.lightLogoRedBg,
-  },
-  heroHookTitleBlock: {
-    ...theme.homePageSectionTitleMarginBottom,
   },
   heroCardContent: {
     padding: '32px 16px',
@@ -120,28 +118,10 @@ export default function Hero() {
       <div className={classes.heroHook}>
         <div className={classes.sectionPadding}>
           <div>
-            <ScrollAnimation
-              animateIn="animate__slideInUp"
-              animateOnce
-              offset={50}
-            >
-              <Grid
-                container
-                spacing={2}
-                className={classes.heroHookTitleBlock}
-              >
-                <Grid item xs={12}>
-                  <Typography variant="h4" color="textPrimary" align="center">
-                    您夢寐以求的另一半
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography variant="h6" color="textSecondary" align="center">
-                    在我們眾多的優質會員中選擇心儀的對象並馬上展開一場浪漫的約會吧！
-                  </Typography>
-                </Grid>
-              </Grid>
-            </ScrollAnimation>
+            <SectionTitle
+              title="您夢寐以求的另一半"
+              body="在我們眾多的優質會員中選擇心儀的對象並馬上展開一場浪漫的約會吧！"
+            />
 
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>

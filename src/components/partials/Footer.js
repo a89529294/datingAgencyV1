@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Hidden, Link, Typography } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
-
-import { navStateContext } from '../contexts/navState';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import logo from '../assets/logo.svg';
+
+import { navStateContext } from '../../contexts/navState';
+
+import logo from '../../assets/logo.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
