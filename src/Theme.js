@@ -1,11 +1,14 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
+const darkLogoRed = 'rgba(217,39,31,255)';
+
 const defaultTheme = createMuiTheme({});
 
 const theme = createMuiTheme({
   palette: {
     common: {
-      lightLogoRedBg: '#F9EBE3',
+      lightLogoRed: '#F9EBE3',
+      darkLogoRed,
       black: '#3c423d',
       selectedBg: 'rgba(0,0,0,0.08)',
       darkenBg: 'rgba(0,0,0,0.54)',
@@ -56,10 +59,10 @@ const theme = createMuiTheme({
     logoText: {
       fontFamily: 'Lato',
       fontWeight: 'bold',
-      color: 'rgba(217,39,31,255)',
+      color: darkLogoRed,
     },
   },
-  homePageSection: {
+  sectionPadding: {
     width: '100%',
     margin: '0 auto',
     padding: '48px 16px',
@@ -71,7 +74,7 @@ const theme = createMuiTheme({
       padding: '96px 64px',
     },
   },
-  homePageSectionTitleMarginBottom: {
+  sectionTitleMarginBottom: {
     marginBottom: '24px',
     [defaultTheme.breakpoints.up('md')]: {
       marginBottom: '32px',

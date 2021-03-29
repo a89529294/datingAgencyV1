@@ -9,7 +9,7 @@ import LinkButton from '../partials/LinkButton';
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
   },
 }));
 

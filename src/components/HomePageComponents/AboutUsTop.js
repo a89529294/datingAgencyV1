@@ -8,7 +8,7 @@ import aboutUsImg from '../../assets/vision.jpg';
 
 const useStyles = makeStyles((theme) => ({
   sectionPadding: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
   },
   logoText: {
     ...theme.typography.logoText,

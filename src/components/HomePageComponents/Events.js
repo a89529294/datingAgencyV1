@@ -52,10 +52,10 @@ const eventArray = [
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
   },
   titleMarginBottom: {
-    ...theme.homePageSectionTitleMarginBottom,
+    ...theme.sectionTitleMarginBottom,
   },
   eventCard: {
     width: '100%',

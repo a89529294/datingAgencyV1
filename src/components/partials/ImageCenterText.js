@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translate(-50%, -50%)',
   },
   sectionPadding: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
   },
   logoText: {
     ...theme.typography.logoText,

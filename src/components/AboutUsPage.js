@@ -20,6 +20,7 @@ import {
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import LocationIcon from '@material-ui/icons/Room';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import SectionTitle from './partials/SectionTitle';
 import heroBg from '../assets/aboutUsBg.jpg';
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   heroText: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
     top: '50%',
     left: '50%',
     position: 'absolute',
@@ -63,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: 0,
   },
   section: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
   },
   aboutUsVectorImg: {
     maxWidth: '420px',
@@ -71,10 +72,10 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   teamTitleSection: {
-    ...theme.homePageSectionTitleMarginBottom,
+    ...theme.sectionTitleMarginBottom,
   },
   memberCard: {
-    background: theme.palette.common.lightLogoRedBg,
+    background: theme.palette.common,
     boxShadow: 'none',
     borderRadius: '8px',
     width: '100%',
@@ -138,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   contactUsTextSection: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
     [theme.breakpoints.down('sm')]: {
       padding: '24px 64px',
     },
@@ -174,6 +175,9 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
     objectFit: 'cover',
+    [theme.breakpoints.up('md')]: {
+      clipPath: 'polygon(10% 0%, 100% 0, 100% 100%, 0% 100%)',
+    },
   },
   galleryContainer: {
     backgroundColor: theme.palette.common.lightGrey,
@@ -195,20 +199,6 @@ const HeroSection = () => {
         title="關於我們"
         body="也因為大家都有穩定的事業，經濟無虞才能照自己的理念來經營，設定會員入會門檻，從外貌、經濟、人品開始把關，好好為客戶們找尋、篩選需求的對象，進而放心的交往。"
       />
-      {/* <div className={classes.heroText}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Typography variant="h3" style={{ color: 'white' }}>
-              關於我們
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h6" style={{ color: 'white' }}>
-              也因為大家都有穩定的事業，經濟無虞才能照自己的理念來經營，設定會員入會門檻，從外貌、經濟、人品開始把關，好好為客戶們找尋、篩選需求的對象，進而放心的交往。
-            </Typography>
-          </Grid>
-        </Grid>
-      </div> */}
     </div>
   );
 };
@@ -217,7 +207,7 @@ const VectorImgAndTextSection = () => {
   const classes = useStyles();
   return (
     <div className={classes.section}>
-      <div>
+      <ScrollAnimation animateIn="animate__slideInUp" animateOnce>
         <Grid container spacing={2} justify="space-between">
           <Grid container item alignItems="center" xs={12} md={6}>
             <img src={aboutUsDating} className={classes.aboutUsVectorImg} />
@@ -239,7 +229,7 @@ const VectorImgAndTextSection = () => {
             </div>
           </Grid>
         </Grid>
-      </div>
+      </ScrollAnimation>
     </div>
   );
 };
@@ -265,7 +255,7 @@ const AboutUsTextSection = () => {
   const classes = useStyles();
   return (
     <div className={classes.section} style={{ paddingTop: 0 }}>
-      <div>
+      <ScrollAnimation animateIn="animate__slideInUp" animateOnce>
         <Grid container spacing={2}>
           <SubSection
             title="我們是誰"
@@ -276,7 +266,7 @@ const AboutUsTextSection = () => {
             body=" 我們很重視客戶親自到公司面談的過程，藉由聊天機會讓會員清楚我司營運模式，了解每位會員特質、真實背景及對象需求，不會硬收無法服務的會員而降低素質，也因約會貴在第一印象，總監就是乙級美容造型師，約會前會針對外表、穿著給予免費指導。"
           />
         </Grid>
-      </div>
+      </ScrollAnimation>
     </div>
   );
 };
@@ -319,7 +309,7 @@ const TeamSection = () => {
   const classes = useStyles();
   return (
     <div className={classes.section} style={{ paddingTop: 0 }}>
-      <div>
+      <ScrollAnimation animateIn="animate__fadeIn" animateOnce>
         <SectionTitle
           title="專業的團隊"
           body="不論團隊決定採行種模式，所有的團隊成員都應該秉持共同合作的精神，在服務的各個層面"
@@ -334,7 +324,7 @@ const TeamSection = () => {
             />
           ))}
         </Grid>
-      </div>
+      </ScrollAnimation>
     </div>
   );
 };
@@ -397,10 +387,16 @@ const ContactUs = () => {
               </List>
             </div>
           </div>
+
           <div className={classes.contactUsMap}>
             <div className={classes.contactUsMapOverFlowHidden}>
               <div className={classes.contactUsMapContainer}>
-                <LazyLoad height={300} once offset={100}>
+                <LazyLoad
+                  height={300}
+                  once
+                  offset={100}
+                  style={{ height: '100%' }}
+                >
                   <img src={mapImg} className={classes.contactUsMapImg} />
                 </LazyLoad>
               </div>
@@ -453,7 +449,12 @@ const Gallery = () => {
           >
             {tileData.map((tile) => (
               <GridListTile key={tile.img} cols={tile.cols}>
-                <LazyLoad height={300} once offset={100}>
+                <LazyLoad
+                  height={300}
+                  once
+                  offset={100}
+                  style={{ height: '100%' }}
+                >
                   <img
                     src={tile.img}
                     alt={tile.title}

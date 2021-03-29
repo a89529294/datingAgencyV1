@@ -12,7 +12,7 @@ import logo from '../../assets/logo.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
   },
   logo: {
     width: '100%',

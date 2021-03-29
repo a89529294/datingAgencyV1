@@ -11,10 +11,10 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `linear-gradient(180deg, #fff , ${theme.palette.common.lightLogoRedBg} )`,
+    backgroundImage: `linear-gradient(180deg, #fff , ${theme.palette.common.lightLogoRed} )`,
   },
   section: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
     maxWidth: '800px',
   },
   cardContent: {

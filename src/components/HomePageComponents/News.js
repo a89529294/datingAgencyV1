@@ -44,11 +44,11 @@ const newsArray = [
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    ...theme.homePageSection,
-    backgroundColor: theme.palette.common.lightLogoRedBg,
+    ...theme.sectionPadding,
+    backgroundColor: theme.palette.common.lightLogoRed,
   },
   sectionTitle: {
-    ...theme.homePageSectionTitleMarginBottom,
+    ...theme.sectionTitleMarginBottom,
   },
   swiperCard: {
     border: 0,

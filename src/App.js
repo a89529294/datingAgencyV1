@@ -6,6 +6,8 @@ import { urlIndexMapping, navStateContext } from './contexts/navState';
 import Footer from './components/partials/Footer';
 import AboutUsPage from './components/AboutUsPage';
 import HomePage from './components/HomePage';
+import PlansPage from './components/PlansPage';
+import EventsPage from './components/EventsPage';
 
 function App() {
   const location = useLocation();
@@ -29,6 +31,12 @@ function App() {
         </Route>
         <Route exact path="/aboutUs">
           <AboutUsPage />
+        </Route>
+        <Route exact path="/plans">
+          <PlansPage />
+        </Route>
+        <Route exact path="/events">
+          <EventsPage />
         </Route>
       </Switch>
       <Footer headerElement={headerRef.current} />

@@ -27,11 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   sectionPadding: {
-    ...theme.homePageSection,
+    ...theme.sectionPadding,
   },
 
   heroHook: {
-    backgroundColor: theme.palette.common.lightLogoRedBg,
+    backgroundColor: theme.palette.common.lightLogoRed,
   },
   heroCardContent: {
     padding: '32px 16px',
