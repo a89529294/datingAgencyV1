@@ -5,7 +5,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import parse from 'html-react-parser';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import LinkButton from '../partials/LinkButton';
+import LinkButton from '../_partials/LinkButton';
 
 const useStyles = makeStyles((theme) => ({
   section: {

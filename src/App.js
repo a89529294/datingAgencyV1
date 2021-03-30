@@ -1,13 +1,14 @@
 import { useEffect, useContext, useRef } from 'react';
 import { useLocation, Switch, Route } from 'react-router-dom';
 
-import Header from './components/partials/Header/Header';
+import Header from './components/_partials/Header/Header';
 import { urlIndexMapping, navStateContext } from './contexts/navState';
-import Footer from './components/partials/Footer';
+import Footer from './components/_partials/Footer';
 import AboutUsPage from './components/AboutUsPage';
 import HomePage from './components/HomePage';
 import PlansPage from './components/PlansPage';
 import EventsPage from './components/EventsPage';
+import MembersPage from './components/MembersPage';
 
 function App() {
   const location = useLocation();
@@ -37,6 +38,9 @@ function App() {
         </Route>
         <Route exact path="/events">
           <EventsPage />
+        </Route>
+        <Route exact path="/members">
+          <MembersPage />
         </Route>
       </Switch>
       <Footer headerElement={headerRef.current} />

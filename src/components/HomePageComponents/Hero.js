@@ -9,8 +9,8 @@ import Button from '@material-ui/core/Button';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import heroBg from '../../assets/heroBg.jpg';
-import SectionTitle from '../partials/SectionTitle';
-import ImageCenterText from '../partials/ImageCenterText';
+import SectionTitle from '../_partials/SectionTitle';
+import ImageCenterText from '../_partials/ImageCenterText';
 
 const useStyles = makeStyles((theme) => ({
   heroBgImg: {

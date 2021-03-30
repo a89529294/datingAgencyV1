@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Grid, useTheme, useMediaQuery, Typography } from '@material-ui/core';
 
-import heroImage from '../../assets/plans/plansHeroImage.jpg';
+import heroImage from '../../assets/plans/plansHeroImage.png';
 
 const useStyles = makeStyles((theme) => ({
   sectionPadding: {

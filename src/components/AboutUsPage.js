@@ -22,7 +22,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import LocationIcon from '@material-ui/icons/Room';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import SectionTitle from './partials/SectionTitle';
+import SectionTitle from './_partials/SectionTitle';
 import heroBg from '../assets/aboutUsBg.jpg';
 import aboutUsDating from '../assets/aboutUsDating.png';
 import m1Img from '../assets/teamMembers/m1.jpeg';
@@ -36,7 +36,7 @@ import g1Img from '../assets/aboutUsGallery/gallery1.jpg';
 import g2Img from '../assets/aboutUsGallery/gallery2.jpg';
 import g3Img from '../assets/aboutUsGallery/gallery3.jpg';
 import g4Img from '../assets/aboutUsGallery/gallery4.jpg';
-import ImageCenterText from './partials/ImageCenterText';
+import ImageCenterText from './_partials/ImageCenterText';
 
 const useStyles = makeStyles((theme) => ({
   heroContainer: {

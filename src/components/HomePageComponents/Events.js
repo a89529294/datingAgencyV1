@@ -10,45 +10,10 @@ import {
 } from '@material-ui/core';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import LinkButton from '../partials/LinkButton';
+import LinkButton from '../_partials/LinkButton';
 
-const eventArray = [
-  {
-    tagColor: 'rgb(33,150,243)',
-    tagLabel: '近期',
-    eventName: '聖誕活動',
-    location: '台北,台灣',
-    date: '2020-12-25',
-  },
-  {
-    tagColor: 'rgb(33,150,243)',
-    tagLabel: '近期',
-    eventName: '百萬年薪與甜美女孩',
-    location: '台中,台灣',
-    date: '2020-12-20',
-  },
-  {
-    tagColor: 'rgb(156,39,176)',
-    tagLabel: '安派中',
-    eventName: '精英調酒派對',
-    location: '台南,台灣',
-    date: '2021-06-11',
-  },
-  {
-    tagColor: 'rgb(233,30,99)',
-    tagLabel: '已過',
-    eventName: '陽光男孩與年美女孩',
-    location: '東京,日本',
-    date: '2018-01-02',
-  },
-  {
-    tagColor: 'rgb(233,30,99)',
-    tagLabel: '已過',
-    eventName: '碧海藍天夏威夷',
-    location: '夏威夷,美國',
-    date: '2017-05-30',
-  },
-];
+import { eventArray } from '../../db';
+import Label from '../_partials/Label';
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -59,12 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   eventCard: {
     width: '100%',
-    transition: 'box-shadow .25s ease, transform .25s ease',
-    '&:hover': {
-      transform: 'translate3d(0,-5px,0)',
-      boxShadow:
-        '0 1.5rem 2.5rem rgb(22 28 45 / 10%), 0 0.3rem 0.5rem -0.5rem rgb(22 28 45 / 5%) !important',
-    },
+    ...theme.cardHoverEffect,
   },
   cardContent: {
     height: '100%',
@@ -76,12 +36,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '48px 24px',
     },
   },
-  tag: {
-    border: '1px solid',
-    display: 'inline-block',
-    padding: '4px',
-    borderRadius: '4px',
-  },
+
   dot: {
     margin: '0px 8px',
     width: '4px',
@@ -128,17 +83,7 @@ const EventCard = ({
           <CardContent className={classes.cardContent}>
             <Grid container spacing={2}>
               <Grid item container xs={12} alignItems="center">
-                <span
-                  className={classes.tag}
-                  style={{
-                    background: tagColor,
-                    borderColor: tagColor,
-                  }}
-                >
-                  <Typography variant="body2" style={{ color: 'white' }}>
-                    {tagLabel}
-                  </Typography>
-                </span>
+                <Label tagColor={tagColor} tagLabel={tagLabel} />
               </Grid>
               <Grid item xs={12}>
                 <Typography variant="h6">{eventName}</Typography>

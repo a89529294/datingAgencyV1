@@ -80,6 +80,16 @@ const theme = createMuiTheme({
       marginBottom: '32px',
     },
   },
+  cardHoverEffect: {
+    boxShadow: '0 2px 10px 0 rgb(23 70 161 / 11%)',
+    transition:
+      'box-shadow .25s ease,transform .25s ease,-webkit-transform .25s ease',
+    '&:hover': {
+      transform: 'translate3d(0,-5px,0)',
+      boxShadow:
+        '0 1.5rem 2.5rem rgb(22 28 45 / 10%), 0 0.3rem 0.5rem -0.5rem rgb(22 28 45 / 5%) !important;',
+    },
+  },
 });
 
 export default responsiveFontSizes(theme);

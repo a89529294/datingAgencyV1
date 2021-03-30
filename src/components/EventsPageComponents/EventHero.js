@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import SectionTitle from '../partials/SectionTitle';
+import SectionTitle from '../_partials/SectionTitle';
 
 import heroImage from '../../assets/eventsPage/eventsPageHeroImage.png';
 
@@ -9,50 +9,37 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     backgroundColor: theme.palette.common.lightLogoRed,
-    marginLeft: '-16px',
-    marginRight: '-16px',
-    marginBottom: '24px',
-    paddingTop: '24px',
-    paddingBottom: '24px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
+    ...theme.sectionPadding,
+    [theme.breakpoints.only('xs')]: {
+      height: '20rem',
+    },
     [theme.breakpoints.up('sm')]: {
-      marginLeft: '-64px',
-      marginRight: '-64px',
-    },
-    [theme.breakpoints.up('md')]: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '30%',
-      height: '100%',
-      maxWidth: '470px',
-      marginLeft: 0,
-      marginRight: 0,
-      marginBottom: 0,
-      paddingTop: 0,
-      paddingRight: 0,
-      paddingBottom: 0,
-      paddingLeft: 0,
+      height: '25rem',
     },
   },
-  heroContainer: {
-    [theme.breakpoints.up('md')]: {
-      position: 'sticky',
-      top: '50%',
-      transform: 'translateY(-50%)',
-      padding: '16px',
-    },
-  },
+  heroContainer: {},
   heroImage: {
     width: '100%',
-    height: '100%',
-    maxWidth: '500px',
-    objectFit: 'cover',
+    height: '35rem',
+
+    position: 'absolute',
+    [theme.breakpoints.only('xs')]: {
+      objectFit: 'contain',
+      left: 0,
+      top: '1rem',
+      maxWidth: '400px',
+    },
+    [theme.breakpoints.only('sm')]: {
+      objectFit: 'contain',
+      left: 0,
+      top: '3rem',
+      maxWidth: '500px',
+    },
     [theme.breakpoints.up('md')]: {
-      width: 'auto',
-      height: 'auto',
-      maxWidth: '100%',
+      objectFit: 'contain',
+      left: '2rem',
+      top: '6rem',
+      maxWidth: '500px',
     },
   },
 }));
